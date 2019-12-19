@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Scramble - Web Crypto API Demo</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script src="filesaver.js"></script>
+
+        <script src="crypto.js"></script>
+        <script src="asmcrypto.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body>
+      <h2>Scramble - Web Crypto API Demo</h2>
+      <hr>
+
+      <h5><span>Step 1 - Generate key</span></h5>
+      <input class="" type="text" placeholder="Password" id="input-key-pw">
+      <button type="button" onclick="genKey()" class="waves-effect waves-light blue accent-5 btn">Generate</button>
+
+      <h5><span>Step 2 - Decrypt/Encrypt files</span></h5>
+
+      <form action="#">
+      <div class="file-field input-field">
+        <div class="btn grey darken-2">
+            <span>File</span>
+            <input type="file" id="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </form>
+
+      <button type="button" onclick="encrypt()" class="disabled waves-effect waves-light blue accent-5 btn" id="btn-do-enc"><i class="material-icons left">lock_outline</i>Encrypt</button>
+      <button type="button" onclick="decrypt()" class="disabled waves-effect waves-light blue accent-5 btn" id="btn-do-dec"><i class="material-icons left">lock_open</i>Decrypt</button>
+
+
+      <h5><span>Step 3 - Benchmark</span></h5>
+
+      <h6>Results:</h6>
+      <p>
+        Webcrypto API: <span id="api-result">-</span> ms
+      </p>
+      <p>
+        AsmCrypto (GCM): <span id="asm-result">-</span> ms
+      </p>
+      <p>
+        AsmCrypto (CBC): <span id="asm-old-result">-</span> ms
+      </p>
+
+      <button id="btn-do-bench" type="button" onclick="doBench()" class="disabled waves-effect waves-light blue accent-5 btn"><i class="material-icons left">all_inclusive</i>Start</button>
+
+    </body>
+
+    <footer class="page-footer grey accent-3">
+    <div class="container">
+      DON'T USE FOR CONFIDENTIAL FILES! THIS ENCRYPTION IS NOT SECURE AND JUST A PROOF-OF-CONCEPT.
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2018 Scramble
+      </div>
+    </div>
+  </footer>
+</html>

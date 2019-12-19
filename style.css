@@ -1,0 +1,33 @@
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#btn-do-dec, #btn-do-enc {
+  margin-top: 10px;
+  margin-right: 13px;
+  min-width: 180px;
+  height: 40px;
+}
+
+hr {
+  margin-bottom: 30px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-left: -50px;
+}
+
+#input-key-pw {
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+
+h5 {
+  margin-top:25px !important;
+  margin-bottom: 22px !important;
+}
